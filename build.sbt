@@ -7,8 +7,7 @@ lazy val publishSettings = Seq(
   ),
   scmInfo := Some(
     ScmInfo(url("https://github.com/laserdisc-io/sbt-api-builder"), "scm:git:git@github.com:laserdisc-io/sbt-api-builder.git")
-  ),
-  publishMavenStyle := false
+  )
 )
 
 lazy val `sbt-api-builder` = project
