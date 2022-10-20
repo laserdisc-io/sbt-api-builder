@@ -11,19 +11,9 @@ lazy val publishSettings = Seq(
   publishMavenStyle := false
 )
 
-lazy val releaseSettings = Seq(
-  bintrayPackageLabels          := Seq("sbt", "plugin", "api-builder"),
-  bintrayReleaseOnPublish       := !isSnapshot.value,
-  pgpPublicRing                 := file(".travis/local.pubring.asc"),
-  pgpSecretRing                 := file(".travis/local.secring.asc"),
-  releaseEarlyWith              := BintrayPublisher,
-  releaseEarlyEnableSyncToMaven := false
-)
-
 lazy val `sbt-api-builder` = project
   .in(file("."))
   .settings(publishSettings)
-  .settings(releaseSettings)
   .settings(
     organization := "io.laserdisc",
     name         := "sbt-api-builder",
